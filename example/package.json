@@ -1,0 +1,34 @@
+{
+  "name": "@example/todo-app",
+  "version": "1.0.0",
+  "description": "TODO application demonstrating the shell architecture",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/shell-integration.js",
+    "dev": "ts-node src/shell-integration.ts",
+    "dev:test": "AUTO_TEST=true ts-node src/shell-integration.ts",
+    "test": "jest",
+    "lint": "eslint src --ext .ts,.tsx"
+  },
+  "dependencies": {
+    "@shell/interfaces": "file:../packages/interfaces",
+    "@shell/shell": "file:../packages/shell",
+    "express": "^4.18.2",
+    "inversify": "^6.0.2",
+    "reflect-metadata": "^0.2.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "@types/node": "^20.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.0.0",
+    "jest": "^29.0.0",
+    "node-fetch": "^3.3.2",
+    "ts-jest": "^29.0.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.0"
+  }
+}

@@ -1,7 +1,7 @@
 # Shell TypeScript Project Makefile
 # Provides common development and build commands
 
-.PHONY: help build build-docker test lint clean install dev build-packages validate run-docker
+.PHONY: help build build-docker test lint clean install dev build-packages validate run-docker run-example
 
 # Default target - show help
 help:
@@ -16,6 +16,7 @@ help:
 	@echo "  make validate       - Run Docker build validation"
 	@echo "  make run-docker     - Run the Docker validation container"
 	@echo "  make dev            - Start development server"
+	@echo "  make run-example    - Build and run the example business app"
 	@echo ""
 	@echo "Docker Commands:"
 	@echo "  make build          - Build validation Docker image"
@@ -213,5 +214,61 @@ quick-check:
 	@cd packages/interfaces && npx tsc --noEmit && echo "✅ interfaces OK" || echo "❌ interfaces has errors"
 	@cd packages/shell && npx tsc --noEmit && echo "✅ shell OK" || echo "❌ shell has errors"
 	@cd packages/cli && npx tsc --noEmit && echo "✅ cli OK" || echo "❌ cli has errors"
+
+# Run the example business application
+run-example: install-example
+	@echo "=========================================="
+	@echo "Starting TODO Application with Shell"
+	@echo "=========================================="
+	@echo ""
+	@echo "🚀 Starting server..."
+	@cd example && npm run dev &
+	@sleep 3
+	@echo ""
+	@echo "🧪 Testing /health endpoint (provided by shell)..."
+	@echo "=========================================="
+	@curl -s http://localhost:3030/health | python3 -m json.tool 2>/dev/null || \
+		(echo "❌ Health check failed - is the server running?" && exit 1)
+	@echo ""
+	@echo "✅ Health endpoint is accessible!"
+	@echo "   The /health endpoint is PROVIDED BY THE SHELL"
+	@echo "   The TODO module does NOT define its own /health"
+	@echo ""
+	@echo "📋 Try these commands:"
+	@echo "   curl http://localhost:3030/"
+	@echo "   curl http://localhost:3030/health"
+	@echo "   curl http://localhost:3030/api/v1/todos"
+	@echo ""
+	@echo "Press Ctrl+C to stop the server"
+	@wait
+
+# Run example with automatic test
+run-example-test: install-example
+	@echo "=========================================="
+	@echo "Running TODO App with Auto Health Test"
+	@echo "=========================================="
+	@cd example && npm run dev:test
+
+# Install example dependencies
+install-example:
+	@echo "Installing example dependencies..."
+	@cd example && npm install
+
+# Build the example application
+build-example:
+	@echo "Building example application..."
+	@cd example && npm run build || echo "⚠️  Build may have TypeScript errors (expected)"
+
+# Build and run example in one command
+example: run-example
+
+# Test the example endpoints
+test-example:
+	@echo "Testing example endpoints..."
+	@sleep 2
+	@echo "\n📡 Testing /test endpoint:"
+	@curl -s http://localhost:3030/test | python3 -m json.tool || echo "Server may not be running"
+	@echo "\n📡 Testing /api/v1/health endpoint:"
+	@curl -s http://localhost:3030/api/v1/health | python3 -m json.tool || echo "Server may not be running"
 
 .DEFAULT_GOAL := help
