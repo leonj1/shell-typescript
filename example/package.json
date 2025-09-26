@@ -9,6 +9,8 @@
     "start": "node dist/shell-integration.js",
     "dev": "ts-node src/shell-integration.ts",
     "dev:test": "AUTO_TEST=true ts-node src/shell-integration.ts",
+    "start:secure": "ts-node src/secure-shell-integration.ts",
+    "test:secure": "AUTO_TEST=true ts-node src/secure-shell-integration.ts",
     "test": "jest",
     "lint": "eslint src --ext .ts,.tsx"
   },
