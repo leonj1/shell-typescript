@@ -1,0 +1,29 @@
+{
+  "name": "@shell/cli",
+  "version": "1.0.0",
+  "description": "CLI tool for the shell architecture",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "bin": {
+    "shell-cli": "./bin/shell-cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "node dist/index.js",
+    "test": "jest"
+  },
+  "keywords": [
+    "shell",
+    "cli",
+    "typescript"
+  ],
+  "author": "Shell Architecture Team",
+  "license": "MIT",
+  "dependencies": {
+    "@shell/interfaces": "file:../interfaces",
+    "commander": "^11.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

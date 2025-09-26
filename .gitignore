@@ -1,0 +1,217 @@
+# Dependencies
+node_modules/
+*/node_modules/
+packages/*/node_modules/
+
+# Build outputs
+dist/
+build/
+out/
+.next/
+*.tsbuildinfo
+packages/*/dist/
+packages/*/build/
+packages/*/.next/
+
+# TypeScript
+*.js
+*.js.map
+*.d.ts
+*.d.ts.map
+# Keep config files
+!*.config.js
+!*.config.*.js
+!jest.config.js
+!jest.config.*.js
+!babel.config.js
+!next.config.js
+!webpack.config.js
+!rollup.config.js
+!.eslintrc.js
+!.prettierrc.js
+!packages/*/jest.config.js
+!packages/*/*.config.js
+!jest.setup.js
+!packages/shell/test/mocks/fileMock.js
+
+# Testing
+coverage/
+.nyc_output/
+packages/*/coverage/
+*.lcov
+.coverage/
+test-results/
+junit.xml
+test-report.xml
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+logs/
+*.log.*
+
+# Environment variables
+.env
+.env.*
+.env.local
+.env.development
+.env.test
+.env.production
+!.env.example
+!.env.template
+
+# IDE and editor files
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json.example
+.idea/
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Package manager files
+.npm
+.yarn/
+.pnp.*
+.yarn-integrity
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+# Keep lockfiles in version control for reproducible builds
+# Uncomment if you want to track lock files
+# !package-lock.json
+# !yarn.lock
+# !pnpm-lock.yaml
+
+# Build tools
+.cache/
+.parcel-cache/
+.turbo/
+.webpack/
+.rollup.cache/
+
+# Debug
+debug/
+*.pid
+*.seed
+*.pid.lock
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+.tmp/
+
+# Module federation
+.module-federation/
+**/remoteEntry.js
+**/remoteEntry.js.map
+
+# Documentation build
+docs/_build/
+docs/.docusaurus/
+docs/node_modules/
+storybook-static/
+
+# Monorepo
+lerna-debug.log*
+.changeset/
+!.changeset/config.json
+
+# Security
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+.ssl/
+certificates/
+
+# Database
+*.sqlite
+*.sqlite3
+*.db
+data/
+
+# Backup files
+*.backup
+*.bak
+*.orig
+
+# Archives
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# Business logic modules (external)
+modules/*
+!modules/.gitkeep
+!modules/example/
+
+# Hot reload
+.hot/
+.cache-loader/
+
+# Performance
+stats.json
+bundle-stats.json
+webpack-stats.json
+
+# Error reporting
+sentry.properties
+bugsnag.properties
+
+# Generated files
+generated/
+.generated/
+auto-generated/
+
+# CI/CD
+.github/workflows/temp/
+.gitlab/temp/
+.circleci/temp/
+
+# Docker
+.dockerignore
+docker-compose.override.yml
+
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+
+# Kubernetes
+kubeconfig
+*.kubeconfig
+
+# Other
+.history/
+.sonarlint/
+.scannerwork/
+report/
+reports/
+*.report.json

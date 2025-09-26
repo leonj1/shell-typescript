@@ -1,0 +1,58 @@
+{
+  "name": "@shell/core",
+  "version": "1.0.0",
+  "description": "Core shell application implementation",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "next dev",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:ci": "jest --ci --coverage --watchAll=false"
+  },
+  "keywords": [
+    "shell",
+    "nextjs",
+    "typescript"
+  ],
+  "author": "Shell Architecture Team",
+  "license": "MIT",
+  "dependencies": {
+    "@shell/interfaces": "file:../interfaces",
+    "@types/crypto-js": "^4.2.2",
+    "@types/dompurify": "^3.0.5",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^24.5.2",
+    "@types/validator": "^13.15.3",
+    "crypto-js": "^4.2.0",
+    "dompurify": "^3.2.7",
+    "inversify": "^6.0.1",
+    "jsonwebtoken": "^9.0.2",
+    "libphonenumber-js": "^1.12.22",
+    "next": "^14.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "reflect-metadata": "^0.1.13",
+    "validator": "^13.15.15"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.28.4",
+    "@babel/preset-env": "^7.28.3",
+    "@babel/preset-react": "^7.27.1",
+    "@babel/preset-typescript": "^7.27.1",
+    "@testing-library/jest-dom": "^6.8.0",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/jest": "^30.0.0",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "babel-jest": "^30.1.2",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^30.1.3",
+    "jest-environment-jsdom": "^30.1.2",
+    "ts-jest": "^29.4.4",
+    "typescript": "^5.0.0"
+  }
+}
