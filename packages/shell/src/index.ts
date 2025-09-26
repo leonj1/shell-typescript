@@ -3,6 +3,10 @@ export * from './core/container/ServiceContainer';
 export * from './core/container/ServiceScope';
 export * from './core/config/ConfigurationManager';
 export * from './core/modules/ModuleLoader';
+export * from './core/SecureShellApplication';
+
+// Export middleware
+export * from './middleware/JWTAuthMiddleware';
 
 // Export implementations
 export * from './implementations/logging/WinstonLogger';
